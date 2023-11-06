@@ -1,13 +1,10 @@
-import PasswordForm from "../password-form/password-form.component";
-import { generatePassword } from "../../static/PasswordUtils";
+import "./password-display.styles.css"
 
-const PasswordDisplay = () => {
-    const submitFormData = (formData) => {
-        console.log(generatePassword(formData));
-    };
-
+const PasswordDisplay = ({ password }) => {
     return (
-        <PasswordForm submitFormData={submitFormData} />
+        <div className="display">
+            <h1 className="password">{password}</h1>
+        </div>
     );
 }
 

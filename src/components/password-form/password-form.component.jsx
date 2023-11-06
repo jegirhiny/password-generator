@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import "./password-form.styles.css"
 
 const PasswordForm = ({ submitFormData }) => {
     const [ formData, setFormData ] = useState({
@@ -40,7 +41,7 @@ const PasswordForm = ({ submitFormData }) => {
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor='length'>{ formData.length }</label>
-            <input name='length' type='range' min={1} max={64} value={formData.length} step={1} onChange={handleChange}/>
+            <input name='length' type='range' min={1} max={52} value={formData.length} step={1} onChange={handleChange}/>
             <label htmlFor='prefix'>Prefix</label>
             <input name='prefix' type='text' onChange={handleChange}/>
             <label htmlFor='suffix'>Suffix</label>
