@@ -2,6 +2,30 @@ const letters = 'abcdefghijklmnopqrstuvwxyz';
 const symbols = ".,!?;:'\"-_+-*/=<>[]{}()@#$%&|\\~!?#^`";
 const numbers = '1234567890';
 
+export function getStrength(password) {
+    let hasSymbol = false, hasNumber = false, hasCapital = false;
+    let strength = 0;
+
+    for (const key of password) {
+        if (!hasSymbol && symbols.includes(key)) {
+            hasSymbol = true;
+            strength += 16;
+        } else if (!hasNumber && numbers.includes(key)) {
+            hasNumber = true;
+            strength += 16;
+        } else if (!hasCapital && key.toUpperCase() === key) {
+            hasCapital = true;
+            strength += 8;
+        }
+    }
+
+    const length = password.length, maxPasswordLength = 48, maxStrength = 50;
+    strength += Math.min(1, (length - 12) / (maxPasswordLength - 12)) * (maxStrength - 10) + 10;
+    strength = Math.min(strength, maxStrength);
+
+    return strength;
+}
+
 export function generatePassword(formData) {
     const length = formData.length;
     const prefix = formData.prefix;

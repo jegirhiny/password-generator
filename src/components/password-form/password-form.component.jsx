@@ -44,8 +44,8 @@ const PasswordForm = ({ submitFormData }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor='length'>{ formData.length }</label>
-            <input name='length' type='range' min={1} max={52} value={formData.length} step={1} onChange={handleChange}/>
+            <label htmlFor='length'>{formData.length}</label>
+            <input name='length' type='range' min={12} max={48} value={formData.length} step={1} onChange={handleChange}/>
             <label htmlFor='prefix'>Prefix</label>
             <input name='prefix' type='text' onChange={handleChange}/>
             <label htmlFor='suffix'>Suffix</label>
