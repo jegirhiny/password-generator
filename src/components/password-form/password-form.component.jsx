@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 
 const PasswordForm = ({ submitFormData }) => {
     const [ formData, setFormData ] = useState({
-        length: 50,
+        length: 12,
         prefix: '',
         suffix: '',
         uppercase: false,
@@ -11,6 +11,12 @@ const PasswordForm = ({ submitFormData }) => {
     });
 
     const [ formChanged, setFormChanged ] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        submitFormData(formData);
+    }
 
     const handleChange = (e) => {
         const { name, value, type } = e.target;
@@ -32,9 +38,9 @@ const PasswordForm = ({ submitFormData }) => {
     }, [formData, formChanged, submitFormData]);
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor='length'>{ formData.length }</label>
-            <input name='length' type='range' min={1} max={100} step={1} onChange={handleChange}/>
+            <input name='length' type='range' min={1} max={64} value={formData.length} step={1} onChange={handleChange}/>
             <label htmlFor='prefix'>Prefix</label>
             <input name='prefix' type='text' onChange={handleChange}/>
             <label htmlFor='suffix'>Suffix</label>
@@ -45,6 +51,7 @@ const PasswordForm = ({ submitFormData }) => {
             <input name='numbers' type='checkbox' onChange={handleChange}/>
             <label htmlFor='symbols'>Symbols</label>
             <input name='symbols' type='checkbox' onChange={handleChange}/>
+            <button>Generate New</button>
         </form>
     );
 }
