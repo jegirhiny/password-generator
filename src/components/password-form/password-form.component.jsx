@@ -38,6 +38,10 @@ const PasswordForm = ({ submitFormData }) => {
         }
     }, [formData, formChanged, submitFormData]);
 
+    useEffect(() => {
+        submitFormData(formData);
+    }, []);
+
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor='length'>{ formData.length }</label>
