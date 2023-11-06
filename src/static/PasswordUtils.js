@@ -11,17 +11,17 @@ export function generatePassword(formData) {
         return prefix + suffix;
     }
 
-    let password = prefix;
+    let password = prefix, pool = getPool(formData.numbers, formData.symbols);
     const infixationLength = length - (prefix.length + suffix.length);
 
     for(let i = 0; i < infixationLength; i++) {
-        password += getKey(formData.uppercase, formData.numbers, formData.symbols);
+        password += getKey(pool, formData.uppercase);
     }
 
     return password + suffix;
 }
 
-function getKey(hasUppercase, hasNumbers, hasSymbols) {
+function getPool(hasNumbers, hasSymbols) {
     let pool = letters;
 
     if (hasNumbers) {
@@ -32,6 +32,10 @@ function getKey(hasUppercase, hasNumbers, hasSymbols) {
         pool += symbols;
     }
 
+    return pool;
+}
+
+function getKey(pool, hasUppercase) {
     const key = pool.charAt(getRandom(pool.length));
 
     if(hasUppercase && letters.includes(key)) {
