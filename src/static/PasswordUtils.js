@@ -27,22 +27,13 @@ export function getStrength(password) {
 }
 
 export function generatePassword(formData) {
-    const length = formData.length;
-    const prefix = formData.prefix;
-    const suffix = formData.suffix;
+    let password = '', pool = getPool(formData.numbers, formData.symbols);
 
-    if(prefix.length + suffix.length === length) {
-        return prefix + suffix;
-    }
-
-    let password = prefix, pool = getPool(formData.numbers, formData.symbols);
-    const infixationLength = length - (prefix.length + suffix.length);
-
-    for(let i = 0; i < infixationLength; i++) {
+    for(let i = 0; i < formData.length; i++) {
         password += getKey(pool, formData.uppercase);
     }
 
-    return password + suffix;
+    return password;
 }
 
 function getPool(hasNumbers, hasSymbols) {

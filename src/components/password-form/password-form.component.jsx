@@ -4,8 +4,6 @@ import "./password-form.styles.css"
 const PasswordForm = ({ submitFormData }) => {
     const [ formData, setFormData ] = useState({
         length: 12,
-        prefix: '',
-        suffix: '',
         uppercase: false,
         numbers: false,
         symbols: false
@@ -45,11 +43,7 @@ const PasswordForm = ({ submitFormData }) => {
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor='length'>{formData.length}</label>
-            <input name='length' type='range' min={12} max={48} value={formData.length} step={1} onChange={handleChange}/>
-            <label htmlFor='prefix'>Prefix</label>
-            <input name='prefix' type='text' onChange={handleChange}/>
-            <label htmlFor='suffix'>Suffix</label>
-            <input name='suffix' type='text' onChange={handleChange}/>
+            <input name='length' type='range' min={1} max={48} value={formData.length} step={1} onChange={handleChange}/>
             <label htmlFor='uppercase'>Uppercase</label>
             <input name='uppercase' type='checkbox' onChange={handleChange}/>
             <label htmlFor='numbers'>Numbers</label>
