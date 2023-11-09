@@ -2,6 +2,29 @@ const letters = 'abcdefghijklmnopqrstuvwxyz';
 const symbols = ".,!?;:'\"-_+-*/=<>[]{}()@#$%&|\\~!?#^`";
 const numbers = '1234567890';
 
+export function generatePassword(formData) {
+    let hasUppercase = formData.uppercase;
+    let hasNumbers = formData.numbers;
+    let hasSymbols = formData.symbols;
+    let pool = getPool(hasNumbers, hasSymbols);
+
+    for(let attempts = 0; attempts < 1000; attempts++) {
+        let passwordChars = [];
+
+        for(let i = 0; i < formData.length; i++) {
+            passwordChars.push(getKey(pool, hasUppercase));
+        }
+
+        const password = passwordChars.join('');
+
+        if(hasSelected(password, hasUppercase, hasNumbers, hasSymbols)) {
+            return password;
+        }
+    }
+
+    throw new Error('Unable to generate a valid password - exceeded the maximum number of attempts.');
+}
+
 export function getStrength(password) {
     let hasSymbol = false, hasNumber = false, hasCapital = false;
     let strength = 0;
@@ -9,13 +32,13 @@ export function getStrength(password) {
     for (const key of password) {
         if (!hasSymbol && symbols.includes(key)) {
             hasSymbol = true;
-            strength += 16;
+            strength += 12;
         } else if (!hasNumber && numbers.includes(key)) {
             hasNumber = true;
-            strength += 16;
-        } else if (!hasCapital && key.toUpperCase() === key) {
+            strength += 12;
+        } else if (!hasCapital && key !== key.toLowerCase()) {
             hasCapital = true;
-            strength += 8;
+            strength += 12;
         }
     }
 
@@ -26,14 +49,21 @@ export function getStrength(password) {
     return strength;
 }
 
-export function generatePassword(formData) {
-    let password = '', pool = getPool(formData.numbers, formData.symbols);
+function hasSelected(password, hasUppercase, hasNumbers, hasSymbols) {
+    const numberSet = new Set(numbers), symbolSet = new Set(symbols);
+    let checkUppercase = false, checkNumbers = false, checkSymbols = false;
 
-    for(let i = 0; i < formData.length; i++) {
-        password += getKey(pool, formData.uppercase);
+    for(const letter of password) {
+        if(letter !== letter.toLowerCase()) {
+            checkUppercase = true;
+        } else if(numberSet.has(letter)) {
+            checkNumbers = true;
+        } else if(symbolSet.has(letter)) {
+            checkSymbols = true;
+        }
     }
 
-    return password;
+    return hasUppercase === checkUppercase && hasNumbers === checkNumbers && hasSymbols === checkSymbols;
 }
 
 function getPool(hasNumbers, hasSymbols) {
