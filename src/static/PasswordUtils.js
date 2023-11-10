@@ -8,7 +8,7 @@ export function generatePassword(formData) {
     let hasSymbols = formData.symbols;
     let pool = getPool(hasNumbers, hasSymbols);
 
-    for(let attempts = 0; attempts < 1000; attempts++) {
+    while(true) {
         let passwordChars = [];
 
         for(let i = 0; i < formData.length; i++) {
@@ -21,8 +21,6 @@ export function generatePassword(formData) {
             return password;
         }
     }
-
-    throw new Error('Unable to generate a valid password - exceeded the maximum number of attempts.');
 }
 
 export function getStrength(password) {
@@ -32,18 +30,18 @@ export function getStrength(password) {
     for (const key of password) {
         if (!hasSymbol && symbols.includes(key)) {
             hasSymbol = true;
-            strength += 14;
+            strength += 20;
         } else if (!hasNumber && numbers.includes(key)) {
             hasNumber = true;
-            strength += 14;
+            strength += 20;
         } else if (!hasCapital && key !== key.toLowerCase()) {
             hasCapital = true;
-            strength += 14;
+            strength += 20;
         }
     }
 
-    const length = password.length, maxPasswordLength = 48, maxStrength = 50;
-    strength += Math.min(1, (length - 12) / (maxPasswordLength - 12)) * (maxStrength - 10) + 10;
+    const length = password.length, maxPasswordLength = 36, maxStrength = 80;
+    strength += Math.min(1, (length - 12) / (maxPasswordLength - 12)) * (maxStrength - 10) + 20;
     strength = Math.min(strength, maxStrength);
 
     return strength;

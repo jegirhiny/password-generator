@@ -42,15 +42,28 @@ const PasswordForm = ({ submitFormData }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor='length'>{formData.length}</label>
-            <input name='length' type='range' min={1} max={48} value={formData.length} step={1} onChange={handleChange}/>
-            <label htmlFor='uppercase'>Uppercase</label>
-            <input name='uppercase' type='checkbox' onChange={handleChange}/>
-            <label htmlFor='numbers'>Numbers</label>
-            <input name='numbers' type='checkbox' onChange={handleChange}/>
-            <label htmlFor='symbols'>Symbols</label>
-            <input name='symbols' type='checkbox' onChange={handleChange}/>
-            <button>Generate New</button>
+            <div>
+                <h2>Password Length</h2>
+                <div>
+                    <label htmlFor='length'>{formData.length}</label>
+                    <input name='length' type='range' min={1} max={36} value={formData.length} step={1} onChange={handleChange}/>
+                </div>
+            </div>
+            <div className="checkbox-col">
+                <div className="checkbox-row">
+                    <label htmlFor='uppercase'>Uppercase</label>
+                    <input name='uppercase' type='checkbox' onChange={handleChange}/>
+                </div>
+                <div className="checkbox-row">
+                    <label htmlFor='numbers'>Numbers</label>
+                    <input name='numbers' type='checkbox' onChange={handleChange}/>
+                </div>
+                <div className="checkbox-row">
+                    <label htmlFor='symbols'>Symbols</label>
+                    <input name='symbols' type='checkbox' onChange={handleChange}/>
+                </div>
+            </div>
+            <button className="generate">Generate</button>
         </form>
     );
 }
