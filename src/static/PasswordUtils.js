@@ -32,13 +32,13 @@ export function getStrength(password) {
     for (const key of password) {
         if (!hasSymbol && symbols.includes(key)) {
             hasSymbol = true;
-            strength += 12;
+            strength += 14;
         } else if (!hasNumber && numbers.includes(key)) {
             hasNumber = true;
-            strength += 12;
+            strength += 14;
         } else if (!hasCapital && key !== key.toLowerCase()) {
             hasCapital = true;
-            strength += 12;
+            strength += 14;
         }
     }
 
