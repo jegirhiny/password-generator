@@ -42,28 +42,30 @@ const PasswordForm = ({ submitFormData }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <h2>Password Length</h2>
-                <div>
+            <div className="col">
+                <div className="range-cont">
+                    <label>Password Length</label>
                     <label htmlFor='length'>{formData.length}</label>
-                    <input name='length' type='range' min={1} max={36} value={formData.length} step={1} onChange={handleChange}/>
+                </div>
+                <div className="range-wrapper">
+                    <input className="range" name='length' type='range' min={1} max={36} value={formData.length} step={1} onChange={handleChange}/>
                 </div>
             </div>
-            <div className="checkbox-col">
-                <div className="checkbox-row">
-                    <label htmlFor='uppercase'>Uppercase</label>
+            <div className="col">
+                <div className="row">
                     <input name='uppercase' type='checkbox' onChange={handleChange}/>
+                    <label htmlFor='uppercase'>Uppercase</label>
                 </div>
-                <div className="checkbox-row">
-                    <label htmlFor='numbers'>Numbers</label>
+                <div className="row">
                     <input name='numbers' type='checkbox' onChange={handleChange}/>
+                    <label htmlFor='numbers'>Numbers</label>
                 </div>
-                <div className="checkbox-row">
-                    <label htmlFor='symbols'>Symbols</label>
+                <div className="row">
                     <input name='symbols' type='checkbox' onChange={handleChange}/>
+                    <label htmlFor='symbols'>Symbols</label>
                 </div>
             </div>
-            <button className="generate">Generate</button>
+            <input className="col generate" type='submit' value='Generate'/>
         </form>
     );
 }
