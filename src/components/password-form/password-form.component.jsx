@@ -44,24 +44,24 @@ const PasswordForm = ({ submitFormData }) => {
         <form onSubmit={handleSubmit}>
             <div className="col">
                 <div className="range-cont">
-                    <label>Password Length</label>
-                    <label htmlFor='length'>{formData.length}</label>
+                    <h3>Password Length</h3>
+                    <h3>{formData.length}</h3>
                 </div>
                 <div className="range-wrapper">
-                    <input className="range" name='length' type='range' min={1} max={36} value={formData.length} step={1} onChange={handleChange}/>
+                    <input className="range" name='length' type='range' min={3} max={36} value={formData.length} step={1} onChange={handleChange}/>
                 </div>
             </div>
             <div className="col">
                 <div className="row">
-                    <input name='uppercase' type='checkbox' onChange={handleChange}/>
+                    <input id="uppercase" name='uppercase' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='uppercase'>Uppercase</label>
                 </div>
                 <div className="row">
-                    <input name='numbers' type='checkbox' onChange={handleChange}/>
+                    <input id="numbers" name='numbers' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='numbers'>Numbers</label>
                 </div>
                 <div className="row">
-                    <input name='symbols' type='checkbox' onChange={handleChange}/>
+                    <input id="symbols" name='symbols' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='symbols'>Symbols</label>
                 </div>
             </div>
