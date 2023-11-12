@@ -44,7 +44,19 @@ export function getStrength(password) {
     strength += Math.min(1, (length - 12) / (maxPasswordLength - 12)) * (maxStrength - 10) + 20;
     strength = Math.min(strength, maxStrength);
 
-    return strength;
+    return { strength: strength, color: getColor(strength) };
+}
+
+function getColor(strength) {
+    let color = '90ee90';
+
+    if(strength < 30) {
+        color = 'ff0000';
+    } else if(strength < 60) {
+        color = 'ffa500'
+    }
+
+    return color;
 }
 
 function hasSelected(password, hasUppercase, hasNumbers, hasSymbols) {
