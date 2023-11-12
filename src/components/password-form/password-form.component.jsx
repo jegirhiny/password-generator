@@ -55,17 +55,13 @@ const PasswordForm = ({ submitFormData }) => {
                 <div className="row">
                     <input id="uppercase" name='uppercase' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='uppercase'>Uppercase</label>
-                </div>
-                <div className="row">
                     <input id="numbers" name='numbers' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='numbers'>Numbers</label>
-                </div>
-                <div className="row">
                     <input id="symbols" name='symbols' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='symbols'>Symbols</label>
+                    <input className="generate" type='submit' value='Generate'/>
                 </div>
             </div>
-            <input className="col generate" type='submit' value='Generate'/>
         </form>
     );
 }
