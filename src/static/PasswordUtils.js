@@ -24,25 +24,14 @@ export function generatePassword(formData) {
 }
 
 export function getStrength(password) {
-    let hasSymbol = false, hasNumber = false, hasCapital = false;
-    let strength = 0;
+    const length = password.length;
+    let strength = 80;
 
-    for (const key of password) {
-        if (!hasSymbol && symbols.includes(key)) {
-            hasSymbol = true;
-            strength += 20;
-        } else if (!hasNumber && numbers.includes(key)) {
-            hasNumber = true;
-            strength += 20;
-        } else if (!hasCapital && key !== key.toLowerCase()) {
-            hasCapital = true;
-            strength += 20;
-        }
+    if(length < 6) {
+        strength = 20;
+    } else if(length < 12) {
+        strength = 40;
     }
-
-    const length = password.length, maxPasswordLength = 36, maxStrength = 80;
-    strength += Math.min(1, (length - 12) / (maxPasswordLength - 12)) * (maxStrength - 10) + 20;
-    strength = Math.min(strength, maxStrength);
 
     return { strength: strength, color: getColor(strength) };
 }
@@ -50,9 +39,9 @@ export function getStrength(password) {
 function getColor(strength) {
     let color = '90ee90';
 
-    if(strength < 30) {
+    if(strength <= 20) {
         color = 'ff0000';
-    } else if(strength < 60) {
+    } else if(strength <= 40) {
         color = 'ffa500'
     }
 

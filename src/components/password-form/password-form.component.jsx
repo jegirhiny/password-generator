@@ -4,9 +4,9 @@ import "./password-form.styles.css"
 const PasswordForm = ({ submitFormData }) => {
     const [ formData, setFormData ] = useState({
         length: 12,
-        uppercase: false,
-        numbers: false,
-        symbols: false
+        uppercase: true,
+        numbers: true,
+        symbols: true
     });
 
     const [ formChanged, setFormChanged ] = useState(false);
@@ -54,15 +54,15 @@ const PasswordForm = ({ submitFormData }) => {
             </div>
             <div className="row">
                 <div className="input-wrapper">
-                    <input id="uppercase" name='uppercase' type='checkbox' onChange={handleChange}/>
+                    <input id="uppercase" name='uppercase' type='checkbox' checked={formData.uppercase} onChange={handleChange}/>
                     <label htmlFor='uppercase'>Uppercase</label>
                 </div>
                 <div className="input-wrapper">
-                    <input id="numbers" name='numbers' type='checkbox' onChange={handleChange}/>
+                    <input id="numbers" name='numbers' type='checkbox' checked={formData.numbers} onChange={handleChange}/>
                     <label htmlFor='numbers'>Numbers</label>
                 </div>
                 <div className="input-wrapper">
-                    <input id="symbols" name='symbols' type='checkbox' onChange={handleChange}/>
+                    <input id="symbols" name='symbols' type='checkbox' checked={formData.symbols} onChange={handleChange}/>
                     <label htmlFor='symbols'>Symbols</label>
                 </div>
                 <input className="generate" type='submit' value='Generate'/>
