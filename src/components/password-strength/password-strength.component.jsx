@@ -1,8 +1,8 @@
-import { getStrength } from "../../static/PasswordUtils";
+import { getProperties } from "../../static/PasswordUtils";
 import "./password-strength.styles.css";
 
 const PasswordStrength = ({ password }) => {
-    const { strength, color } = getStrength(password);
+    const { strength, color } = getProperties(password);
 
     return (
         <div className="strength-wrapper">

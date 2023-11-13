@@ -23,29 +23,10 @@ export function generatePassword(formData) {
     }
 }
 
-export function getStrength(password) {
-    const length = password.length;
-    let strength = 80;
+export function getProperties(password) {
+    const strength = getStrength(password), color = getColor(strength);
 
-    if(length < 6) {
-        strength = 20;
-    } else if(length < 12) {
-        strength = 40;
-    }
-
-    return { strength: strength, color: getColor(strength) };
-}
-
-function getColor(strength) {
-    let color = '90ee90';
-
-    if(strength <= 20) {
-        color = 'ff0000';
-    } else if(strength <= 40) {
-        color = 'ffa500'
-    }
-
-    return color;
+    return {strength: strength, color: color};
 }
 
 function hasSelected(password, hasUppercase, hasNumbers, hasSymbols) {
@@ -65,18 +46,8 @@ function hasSelected(password, hasUppercase, hasNumbers, hasSymbols) {
     return hasUppercase === checkUppercase && hasNumbers === checkNumbers && hasSymbols === checkSymbols;
 }
 
-function getPool(hasNumbers, hasSymbols) {
-    let pool = letters;
-
-    if (hasNumbers) {
-        pool += numbers;
-    }
-    
-    if (hasSymbols) {
-        pool += symbols;
-    }
-
-    return pool;
+function getRandom(max) {
+    return Math.floor(Math.random() * max);
 }
 
 function getKey(pool, hasUppercase) {
@@ -91,6 +62,41 @@ function getKey(pool, hasUppercase) {
     return key;
 }
 
-function getRandom(max) {
-    return Math.floor(Math.random() * max);
+function getStrength(password) {
+    const length = password.length;
+    let strength = 80;
+
+    if(length < 6) {
+        strength = 20;
+    } else if(length < 12) {
+        strength = 40;
+    }
+
+    return strength;
+}
+
+function getColor(strength) {
+    let color = '90ee90';
+
+    if(strength <= 20) {
+        color = 'ff0000';
+    } else if(strength <= 40) {
+        color = 'ffa500'
+    }
+
+    return color;
+}
+
+function getPool(hasNumbers, hasSymbols) {
+    let pool = letters;
+
+    if (hasNumbers) {
+        pool += numbers;
+    }
+    
+    if (hasSymbols) {
+        pool += symbols;
+    }
+
+    return pool;
 }
