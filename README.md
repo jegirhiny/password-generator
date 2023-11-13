@@ -1,5 +1,5 @@
 # password-generator
-Crafting highly secure and tailored passwords has never been easier. This robust password generator empowers users to effortlessly create customizable keys, enhancing the security of your digital accounts. As an open-source project, it offers a diverse array of options to generate strong and unique passwords, providing peace of mind in an increasingly digital world.
+Crafting highly secure and tailored passwords has never been easier. This robust password generator empowers users to effortlessly create customizable keys, enhancing the security of their digital accounts. It offers an array of options to generate strong and unique passwords, providing peace of mind in an increasingly digital world.
 
 ### Project Structure
 - `/components`  The modularized React components.
