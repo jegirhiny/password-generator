@@ -38,6 +38,7 @@ const PasswordForm = ({ submitFormData }) => {
 
     useEffect(() => {
         submitFormData(formData);
+        // eslint-disable-next-line
     }, []);
 
     return (
