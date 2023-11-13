@@ -13,10 +13,10 @@ Crafting highly secure and tailored passwords has never been easier. This robust
 4. Click the "Generate" button to create a custom password.
 
 ### Screenshots
-<img src="https://github.com/jegirhiny/password-generator/assets/93138298/32df8a5b-3080-43fc-8aeb-674ea45c4f0f" width="45%" alt="password-generator-def-view-bad">
-<img src="https://github.com/jegirhiny/password-generator/assets/93138298/c12baca5-0481-4257-9f08-df9117b3e58c" width="45%" alt="password-generator-def-view-weak">
-<img src="https://github.com/jegirhiny/password-generator/assets/93138298/0317beac-8e5a-4213-9493-ebd4d2aacc4d" width="45%" alt="password-generator-def-view-strong">
-<img src="https://github.com/jegirhiny/password-generator/assets/93138298/de17f778-4b8b-41f3-b443-6d43f5eb7a81" width="45%" alt="password-generator-def-view-strong">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/81fee772-db51-424e-bbaf-4afef3805f99" width="45%" alt="password-generator-def-view-bad">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/98d32326-7338-4851-b51b-7873906734ff" width="45%" alt="password-generator-def-view-weak">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/e28c89a5-d8c0-4df7-92b3-31e19979286a" width="45%" alt="password-generator-def-view-strong">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/13746ab5-892e-4545-97c0-ce05e45537db" width="45%" alt="password-generator-def-view-preferences">
 
 ### Features
 - **Dynamic Display**: Visualize the generated password in real-time, adapting to your preferences.
