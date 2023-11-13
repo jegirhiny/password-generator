@@ -52,16 +52,20 @@ const PasswordForm = ({ submitFormData }) => {
                     <input className="range" name='length' type='range' min={3} max={36} value={formData.length} step={1} onChange={handleChange}/>
                 </div>
             </div>
-            <div className="col">
-                <div className="row">
+            <div className="row">
+                <div className="input-wrapper">
                     <input id="uppercase" name='uppercase' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='uppercase'>Uppercase</label>
+                </div>
+                <div className="input-wrapper">
                     <input id="numbers" name='numbers' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='numbers'>Numbers</label>
+                </div>
+                <div className="input-wrapper">
                     <input id="symbols" name='symbols' type='checkbox' onChange={handleChange}/>
                     <label htmlFor='symbols'>Symbols</label>
-                    <input className="generate" type='submit' value='Generate'/>
                 </div>
+                <input className="generate" type='submit' value='Generate'/>
             </div>
         </form>
     );

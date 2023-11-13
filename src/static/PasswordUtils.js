@@ -1,5 +1,5 @@
 const letters = 'abcdefghijklmnopqrstuvwxyz';
-const symbols = ".,!?;:'\"-_+-*/=<>[]{}()@#$%&|\\~!?#^`";
+const symbols = ".,!?;:'\"-_+*/=<>[]{}()@#$%&|\\~^`";
 const numbers = '1234567890';
 
 export function generatePassword(formData) {
