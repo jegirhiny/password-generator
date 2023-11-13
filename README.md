@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# password-generator
+Crafting highly secure and tailored passwords has never been easier. This robust password generator empowers users to effortlessly create customizable keys, enhancing the security of your digital accounts. As an open-source project, it offers a diverse array of options to generate strong and unique passwords, providing peace of mind in an increasingly digital world.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Project Structure
+- `/components`  The modularized React components.
+- `/images` Various images used for icons and visual elements.
+- `/static` JavaScript files housing the application's logic.
 
-## Available Scripts
+### Usage
+1. Clone this repository to your local machine.
+2. Run the app in development mode using `npm start`.
+3. Select your password preferences (uppercase, numbers, etc).
+4. Click the "Generate" button to create a custom password.
 
-In the project directory, you can run:
+### Screenshots
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/32df8a5b-3080-43fc-8aeb-674ea45c4f0f" width="45%" alt="password-generator-def-view-bad">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/c12baca5-0481-4257-9f08-df9117b3e58c" width="45%" alt="password-generator-def-view-weak">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/0317beac-8e5a-4213-9493-ebd4d2aacc4d" width="45%" alt="password-generator-def-view-strong">
+<img src="https://github.com/jegirhiny/password-generator/assets/93138298/de17f778-4b8b-41f3-b443-6d43f5eb7a81" width="45%" alt="password-generator-def-view-strong">
 
-### `npm start`
+### Features
+- **Dynamic Display**: Visualize the generated password in real-time, adapting to your preferences.
+- **Customizable Preferences**: Tailor your passwords by selecting preferences such as numbers, and symbols.
+- **Copy to Clipboard**: Copy your generated password with a single click for quick and convenient usage.
+- **Generate Button**: Generate similar passwords by clicking the "Generate" button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Technologies
+- **React**: Powers dynamic user interfaces.
+- **JavaScript**: Drives app logic and interactivity.
+- **HTML/CSS**: Constructs structure and stylish presentation.
